@@ -90,10 +90,10 @@ def run():
         st.info("Please add your OpenAI API key and Youtube Video Link to continue.")
 
     if st.button('Reset and Reload App'):
-        # for key in list(st.session_state.keys()):
-        #     del st.session_state[key]
+        for key in list(st.session_state.keys()):
+            del st.session_state[key]
         streamlit_js_eval(js_expressions="parent.window.location.reload()")
-        # st.rerun()
+        st.rerun()
 
 
 if __name__ == "__main__":
